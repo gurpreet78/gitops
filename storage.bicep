@@ -8,3 +8,5 @@ resource mysa 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   }
   kind: 'StorageV2'
 }
+
+output mysaname

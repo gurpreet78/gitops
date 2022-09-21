@@ -1,20 +1,14 @@
-name: Deploy Azure Resoruces
+name: Deploy to environments
 
 on:
-  push:
-    branches: [ "main" ]
-    paths-ignore:
-     - ".github/workflows/*"
-     - "*.ps1"
-
   workflow_dispatch:
 
-env:
-  Az_RG_Name: RG10
-
 jobs:
-  lint:
+  deploy-test:
     runs-on: ubuntu-latest
+    environment: test
+    env:
+      Az_RG_Name: RG20-Test
     steps:
       - uses: actions/checkout@v3
       - name: Run Bicep Linter Tester
