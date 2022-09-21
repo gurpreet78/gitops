@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run Bicep Linter Tester
-        run: az bice build --file stroage.bicep
+        run: az bicep build --file stroage.bicep
 
       - name: Run a multi-line script
         run: |
