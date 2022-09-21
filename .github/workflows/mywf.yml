@@ -43,4 +43,3 @@ jobs:
           resourceGroupName: ${{env.Az_RG_Name}}
           template: ./storage.bicep
           parameters: kind=StorageV2
-
