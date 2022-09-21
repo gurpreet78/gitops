@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Run Bicep Linter Tester
         run: az bicep build --file storage.bicep
 
@@ -25,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint]
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@v3
       - name: Sign in to Azure
         uses: azure/login@v1
         with:
@@ -40,6 +39,6 @@ jobs:
         with:
           deploymentName: ${{github.run_number}}
           subscriptionId: ${{ secrets.AZURE_CRED }}
-          resourceGroupName: ${{env.Az_RG_Name}}
+          resourceGroupNasme: ${{env.Az_RG_Name}}
           template: ./storage.bicep
           parameters: kind=StorageV2
