@@ -1,4 +1,4 @@
-var mylocation = 'westeurope'
+param mylocation string = 'westeurope'
 
 resource mysa 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: 'newsaviagithubRunner'
